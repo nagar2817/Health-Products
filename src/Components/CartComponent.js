@@ -22,18 +22,7 @@ const CartComponent = () => {
           <List className="cart-list" style={{ width: '70%', marginRight: 'auto' }}>
             {cartTasks.map((item, index) => (
               <>
-              <ListItem key={index} className="cart-item">
-                <ListItemText
-                  className="cart-item-text"
-                  primary={<Typography className="cart-item-name">{item.name}</Typography>}
-                  secondary={
-                    <>
-                      <Typography className="cart-item-price">Price: {item.price} rupees</Typography>
-                      <Button onClick={()=>removeFromCart(item.name)}> Remove </Button>
-                    </>
-                  }
-                />
-              </ListItem>
+             
               <Divider />
               </>
             ))}
