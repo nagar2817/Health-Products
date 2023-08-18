@@ -3,7 +3,7 @@ import { ListItem, ListItemText, Typography, Button } from '@mui/material';
 import { ProductContext } from '../ProductContext.js';
 import './CartItem.css';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item,index }) => {
   const { cartTasks, setCartTasks, feverPackage, setFeverPackage, whPackage, setWhPackage } = useContext(ProductContext);
 
   const removeFromCart = () => {

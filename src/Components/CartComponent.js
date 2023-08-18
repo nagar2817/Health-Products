@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Typography, List, ListItem, ListItemText, Divider, Button } from '@mui/material';
 import { ProductContext } from '../ProductContext.js';
 import './CartComponentStyle.css';
+import CartItem from './CartItem.js';
 
 const CartComponent = () => {
   const { cartTasks,setCartTasks } = useContext(ProductContext);
@@ -22,7 +23,7 @@ const CartComponent = () => {
           <List className="cart-list" style={{ width: '70%', marginRight: 'auto' }}>
             {cartTasks.map((item, index) => (
               <>
-             
+              <CartItem item={item} index={index}/>
               <Divider />
               </>
             ))}
