@@ -9,7 +9,6 @@ const WomenHealthComponent = () => {
   return (
     <div>
       <ProductCardList products={whPackage}/>
-      {/* Render data related to Women Health Package */}
     </div>
   );
 };

@@ -1,9 +1,14 @@
 import React,{useContext} from 'react';
 import { Card, CardContent, Typography,Button } from '@mui/material';
 import {ProductContext} from '../ProductContext.js';
+import { Link,useParams } from 'react-router-dom';
 
-const ProductCard = ({ name, description, price, extraFeatures }) => {
-  const {cartTasks,setCartTasks} = useContext(ProductContext);
+
+const ProductCard = ({ name, description, price, extraFeatures,Added }) => {
+  const {cartTasks,setCartTasks,setWhPackage,setFeverPackage,feverPackage,whPackage} = useContext(ProductContext);
+  const path = window.location.pathname;
+const cartText = path.split('/').pop();
+// console.log(cartText); // "cart"
   const handleAddToCart = () => {
     // Create a new task object with the product details
     const newTask = {
@@ -15,6 +20,23 @@ const ProductCard = ({ name, description, price, extraFeatures }) => {
 
     // Add the new task to the cartTasks list
     setCartTasks([...cartTasks, newTask]);
+    
+    const newFeverPackage = feverPackage.map((task) => {
+      if (task.name === name) {
+        return { ...task, Added: true };
+      }
+      return task;
+    });
+    setFeverPackage(newFeverPackage);
+
+    const newWhPackage = whPackage.map((task) => {
+      if (task.name === name) {
+        return { ...task, Added: true };
+      }
+      return task;
+    });
+    setWhPackage(newWhPackage);
+
   };
   return (
     <Card sx={{ minWidth: 275 }}>
@@ -31,9 +53,21 @@ const ProductCard = ({ name, description, price, extraFeatures }) => {
         <Typography variant="body2" color="text.secondary">
           {extraFeatures}
         </Typography>
-        <Button variant="contained" onClick={handleAddToCart}>
-          Add to Cart
-        </Button>
+
+        { cartText !== "cart" ? 
+        (Added ? 
+          (
+            <Button variant="contained" component={Link} to="/cart">
+              Go to Cart
+            </Button>
+          ) :
+          (
+          <Button variant="contained" onClick={handleAddToCart}>
+            Add to Cart
+          </Button>
+          )
+          )
+        : "" }
       </CardContent>
     </Card>
   );
