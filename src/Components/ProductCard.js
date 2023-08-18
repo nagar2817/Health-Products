@@ -1,7 +1,21 @@
-import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import React,{useContext} from 'react';
+import { Card, CardContent, Typography,Button } from '@mui/material';
+import {ProductContext} from '../ProductContext.js';
 
 const ProductCard = ({ name, description, price, extraFeatures }) => {
+  const {cartTasks,setCartTasks} = useContext(ProductContext);
+  const handleAddToCart = () => {
+    // Create a new task object with the product details
+    const newTask = {
+      name,
+      description,
+      price,
+      extraFeatures
+    };
+
+    // Add the new task to the cartTasks list
+    setCartTasks([...cartTasks, newTask]);
+  };
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -17,6 +31,9 @@ const ProductCard = ({ name, description, price, extraFeatures }) => {
         <Typography variant="body2" color="text.secondary">
           {extraFeatures}
         </Typography>
+        <Button variant="contained" onClick={handleAddToCart}>
+          Add to Cart
+        </Button>
       </CardContent>
     </Card>
   );
