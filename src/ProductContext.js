@@ -7,17 +7,17 @@ const ProductProvider = ({children})=>{
   const [feverPackage,setFeverPackage] = useState([]);
   const [cartTasks,setCartTasks] = useState([]);
   return (
-    <ProductContext.Provider value={{ 
+    <ProductContext.Provider value={{  
       whPackage,
       setWhPackage,
       feverPackage,
       setFeverPackage,
       cartTasks,
-      setCartTasks
+      setCartTasks 
     }}>
     {children}
     </ProductContext.Provider>
   )
 }
 
-export default ProductProvider;
+export default ProductProvider; 

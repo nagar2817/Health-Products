@@ -11,4 +11,4 @@ const FeverComponent = () => {
   );
 };
 
-export default FeverComponent;
+export default FeverComponent; 
