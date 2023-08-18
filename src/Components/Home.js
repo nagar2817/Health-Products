@@ -11,6 +11,9 @@ const HomeComponent = () => {
       <Button component={Link} to="/fever-package">
         Fever Package
       </Button>
+      <Button component={Link} to="/cart">
+        Cart
+      </Button>
     </div>
   );
 };

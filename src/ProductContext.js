@@ -1,10 +1,10 @@
 import React,{createContext,useState} from 'react';
-
+import {WomenData,FeverData} from './Data.js';
 export const ProductContext = createContext();
 
 const ProductProvider = ({children})=>{
-  const [whPackage,setWhPackage] = useState([]);
-  const [feverPackage,setFeverPackage] = useState([]);
+  const [whPackage,setWhPackage] = useState(WomenData);
+  const [feverPackage,setFeverPackage] = useState(FeverData);
   const [cartTasks,setCartTasks] = useState([]);
   return (
     <ProductContext.Provider value={{  

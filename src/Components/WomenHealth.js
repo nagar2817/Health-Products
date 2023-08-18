@@ -1,12 +1,13 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Typography } from '@mui/material';
+import {ProductContext} from '../ProductContext.js'
+import ProductCardList from './ProductCardList.js';
 
 const WomenHealthComponent = () => {
+  const {whPackage,setWhPackage} = useContext(ProductContext);
   return (
     <div>
-      <Typography variant="h5" component="div">
-        Women Health Package
-      </Typography>
+      <ProductCardList products={whPackage}/>
       {/* Render data related to Women Health Package */}
     </div>
   );

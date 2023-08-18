@@ -1,12 +1,15 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Typography } from '@mui/material';
+import {ProductContext} from '../ProductContext.js'
+import ProductCardList from './ProductCardList.js';
+
+
 const FeverComponent = () => {
+  const {feverPackage,setFeverPackage} = useContext(ProductContext);
+
   return (
     <div>
-      <Typography variant="h5" component="div">
-        Fever Package
-      </Typography>
-      {/* Render data related to Fever Package */}
+      <ProductCardList products={feverPackage}/>
     </div>
   );
 };

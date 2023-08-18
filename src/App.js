@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomeComponent from './Components/Home.js';
 import WomenHealthComponent from './Components/WomenHealth.js';
 import FeverComponent from './Components/Fever.js';
+import CartComponent from './Components/CartComponent.js';
 
 function App() {
   return (
@@ -11,13 +12,15 @@ function App() {
         <Routes>
             <Route
               path="/"
-              component={HomeComponent}
+              element={<HomeComponent/>}
             />
             <Route
               path="/women-health-package"
-              component={WomenHealthComponent}
+              element={<WomenHealthComponent/>}
             />
-            <Route path="/fever-package" component={FeverComponent} />
+            <Route path="/fever-package" element={<FeverComponent/>} />
+            <Route path="/cart" element={<CartComponent/>} />
+    
         </Routes>
 
     </div>
