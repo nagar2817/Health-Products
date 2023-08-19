@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
-const LandingPage = () => {
+const Hero = () => {
   return (
     <div>
       {/* Header Section */}
@@ -109,4 +109,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Hero;
