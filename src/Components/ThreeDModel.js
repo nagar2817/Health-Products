@@ -1,61 +1,142 @@
-import React, { useEffect } from 'react';
-import * as THREE from 'three';
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import { Canvas } from '@react-three/fiber';
+import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
+import { makeStyles } from '@mui/styles';
 
-function ThreeDScene() {
-  useEffect(() => {
-    // Create a Three.js scene
-    const scene = new THREE.Scene();
+const useStyles = makeStyles((theme) => ({
+  section: {
+    height: '100vh',
+    scrollSnapAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  container: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: '100vh',
+    width: '1400px',
+  },
+  left: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'left',
+    justifyContent: 'center',
+    gap: '20px',
+    flex: 2,
+  },
+  right: {
+    position: 'relative',
+    flex: 3,
+    height: '50%',
+  },
+  title: {
+    fontSize: '74px',
+    color: 'black',
+  },
+  what: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'left',
+    gap: '10px',
+  },
+  desc: {
+    fontSize: '24px',
+    color: 'black',
+  },
+  line: {
+    height: '5px',
+  },
+  img: {
+    height: '600px',
+    width: '800px',
+    objectFit: 'contain',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    margin: 'auto',
+    animation: '$animate 2s infinite ease alternate',
+  },
+  button: {
+    border: 'none',
+    borderRadius: '5px',
+    backgroundColor: 'orange',
+    color: 'white',
+    width: '100px',
+    padding: '10px',
+    cursor: 'pointer',
+    fontWeight: 500,
+  },
+  sub: {
+    color: 'orange',
+  },
+  '@keyframes animate': {
+    to: {
+      transform: 'translateY(25px)',
+    },
+  },
+}));
 
-    // Create a camera
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
+const Hero = () => {
+  const classes = useStyles();
 
-    // Create a WebGLRenderer
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+  return (
+    <Paper elevation={3} className={classes.section}>
+      <Container className={classes.container}>
+        <Grid container>
+          <Grid item xs={12} sm={6}>
+            <div className={classes.left}>
+              <Typography variant="h1" className={classes.title}>
+                Think. Make. Solve.
+              </Typography>
+              <div className={classes.what}>
+                <img src="./img/line.png" alt="line" className={classes.line} />
+                <Typography variant="h2" className={classes.sub}>
+                  What we Do
+                </Typography>
+              </div>
+              <Typography variant="body1" className={classes.desc}>
+                We enjoy creating delightful, human-centered digital experiences.
+              </Typography>
+              <Button variant="contained" color="primary" className={classes.button}>
+                Learn More
+              </Button>
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <div className={classes.right}>
+              <Canvas>
+                <OrbitControls enableZoom={false} autoRotate />
+                <ambientLight intensity={1} />
+                <directionalLight position={[3, 2, 1]} />
+                <Sphere args={[1, 100, 200]} scale={2.6}>
+                  <MeshDistortMaterial
+                    color="#d0900f"
+                    attach="material"
+                    distort={0.5}
+                    speed={2}
+                  />
+                </Sphere>
+              </Canvas>
+              <img
+                src="../static/3d-medical-background-with-male-head-brain-dna-strands.jpg" // Replace with your medicine image URL
+                alt="medicine"
+                className={classes.img}
+              />
+            </div>
+          </Grid>
+        </Grid>
+      </Container>
+    </Paper>
+  );
+};
 
-    // Load the 3D models for AI and medicine
-    // Replace 'aiModel.glb' and 'medicineModel.glb' with your actual 3D model files
-    const loader = new THREE.GLTFLoader();
-    let aiModel, medicineModel;
-
-    loader.load('path_to_aiModel.glb', (gltf) => {
-      aiModel = gltf.scene;
-      aiModel.position.x = -2;
-      scene.add(aiModel);
-    });
-
-    loader.load('path_to_medicineModel.glb', (gltf) => {
-      medicineModel = gltf.scene;
-      medicineModel.position.x = 2;
-      scene.add(medicineModel);
-    });
-
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-
-      // Rotate the AI and medicine models
-      if (aiModel && medicineModel) {
-        aiModel.rotation.x += 0.01;
-        aiModel.rotation.y += 0.01;
-        medicineModel.rotation.x += 0.01;
-        medicineModel.rotation.y += 0.01;
-      }
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // Cleanup
-    return () => {
-      document.body.removeChild(renderer.domElement);
-    };
-  }, []);
-
-  return null;
-}
-
-export default ThreeDScene;
+export default Hero;

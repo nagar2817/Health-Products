@@ -5,11 +5,8 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-import ThreeDModel from './ThreeDModel';
+import Hero from './ThreeDModel';
 
-// Placeholder images (replace with your own)
-const aiImageURL = 'https://via.placeholder.com/400x300';
-const medicineImageURL = 'https://via.placeholder.com/400x300';
 
 function Home() {
   return (
@@ -17,7 +14,7 @@ function Home() {
       <Typography variant="h4" component="h1" align="center" gutterBottom>
         Welcome to our AI Healthcare Startup
       </Typography>
-    <ThreeDModel />
+    <Hero />
      
     </Container>
   );
