@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
 import { Card, CardContent, Typography,Button } from '@mui/material';
-import {ProductContext} from '../ProductContext.js';
+import {ProductContext} from '../../ProductContext.js';
 import { Link,useParams } from 'react-router-dom';
 
 

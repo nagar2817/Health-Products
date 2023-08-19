@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ListItem, ListItemText, Typography, Button } from '@mui/material';
-import { ProductContext } from '../ProductContext.js';
+import { ProductContext } from '../../ProductContext.js';
 import './CartItem.css';
 
 const CartItem = ({ item,index }) => {
@@ -33,9 +33,9 @@ const CartItem = ({ item,index }) => {
             secondary={
                 <>
                   <Typography className="cart-item-price">Price: {item.price} rupees</Typography>
-                  <Button onClick={()=>removeFromCart(item.name)}> Remove </Button>
+                  <Button variant="contained" onClick={()=>removeFromCart(item.name)}> Remove </Button>
                 </>
-                      }
+                }
         />
     </ListItem>
   );

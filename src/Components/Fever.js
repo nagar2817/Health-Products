@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
 import { Typography } from '@mui/material';
 import {ProductContext} from '../ProductContext.js'
-import ProductCardList from './ProductCardList.js';
+import ProductCardList from './ProductCard/ProductCardList.js';
 
 
 const FeverComponent = () => {

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Typography, List, ListItem, ListItemText, Divider, Button } from '@mui/material';
-import { ProductContext } from '../ProductContext.js';
+import { ProductContext } from '../../ProductContext.js';
 import './CartComponentStyle.css';
-import CartItem from './CartItem.js';
+import CartItem from '../CardItem/CartItem.js';
 
 const CartComponent = () => {
   const { cartTasks,setCartTasks } = useContext(ProductContext);
