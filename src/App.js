@@ -1,14 +1,16 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomeComponent from './Components/Home.js';
+// import HomeComponent from './Components/Home.js';
 import WomenHealthComponent from './Components/WomenHealth.js';
 import FeverComponent from './Components/Fever.js';
 import CartComponent from './Components/CartList/CartComponent.js';
+import Header from './Components/Home.js';
 
 function App() {
   return (
     <div className="App">
-          <HomeComponent /> 
+      <Header/>
+        {/* <HomeComponent />  */}
         <Routes>
             <Route
               path="/women-health-package"

@@ -1,104 +1,103 @@
 export const WomenData = [
   {
     "name": "Dolo 650mg Tablet",
-    "description": "Dolo 650mg Tablet is a commonly used medicine for the relief of pain and fever.",
+    "tags": ["fever", "pain relief"],
     "price": "1400",
     "extraFeatures": "Dolo 650mg Tablet is known for its effectiveness in providing quick relief from pain and fever.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Cetrizine 10mg Tablet",
-    "description": "Cetrizine 10mg Tablet is an antihistamine used to relieve allergy symptoms such as watery eyes, runny nose, itching eyes/nose, sneezing, hives, and itching.",
+    "tags": ["allergy", "antihistamine"],
     "price": "250",
     "extraFeatures": "Provides relief from various allergy symptoms.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Ibuprofen 400mg Tablet",
-    "description": "Ibuprofen 400mg Tablet is a nonsteroidal anti-inflammatory drug (NSAID) used to relieve pain, reduce inflammation, and control fever.",
+    "tags": ["pain relief", "anti-inflammatory"],
     "price": "800",
     "extraFeatures": "Effective in reducing pain and inflammation.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Amoxicillin 500mg Capsule",
-    "description": "Amoxicillin 500mg Capsule is an antibiotic used to treat a wide variety of bacterial infections. It works by stopping the growth of bacteria.",
+    "tags": ["antibiotic", "bacterial infection"],
     "price": "1200",
     "extraFeatures": "Treats various bacterial infections.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Probiotic Digestive Support Capsule",
-    "description": "Probiotic Digestive Support Capsule contains beneficial bacteria that support digestive health and balance gut flora.",
+    "tags": ["digestive health", "gut flora"],
     "price": "600",
     "extraFeatures": "Promotes a healthy digestive system.",
-    "Added":false
+    "Added": false
   }
-]
+];
 
 export const FeverData = [
   {
     "name": "Paracetamol 500mg Tablet",
-    "description": "Paracetamol 500mg Tablet is a common over-the-counter medicine used to relieve mild to moderate pain and reduce fever.",
+    "tags": ["fever", "pain relief"],
     "price": "100",
     "extraFeatures": "Gentle on the stomach and effective for pain relief.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Loratadine 10mg Tablet",
-    "description": "Loratadine 10mg Tablet is an antihistamine used to treat allergy symptoms like sneezing, runny nose, and itching.",
+    "tags": ["allergy", "antihistamine"],
     "price": "140",
     "extraFeatures": "Provides non-drowsy allergy relief.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Omeprazole 20mg Capsule",
-    "description": "Omeprazole 20mg Capsule is a proton pump inhibitor (PPI) that reduces stomach acid production, used to treat conditions like acid reflux and ulcers.",
+    "tags": ["acid reflux", "ulcers"],
     "price": "600",
     "extraFeatures": "Relieves heartburn and promotes healing of stomach ulcers.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Aspirin 325mg Tablet",
-    "description": "Aspirin 325mg Tablet is a pain reliever and anti-inflammatory medication that also helps prevent blood clots.",
+    "tags": ["pain relief", "anti-inflammatory", "blood clot prevention"],
     "price": "400",
     "extraFeatures": "Dual action: pain relief and blood clot prevention.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Ciprofloxacin 500mg Tablet",
-    "description": "Ciprofloxacin 500mg Tablet is an antibiotic used to treat bacterial infections of the skin, lungs, and urinary tract.",
+    "tags": ["antibiotic", "bacterial infection"],
     "price": "1200",
     "extraFeatures": "Effective against a range of bacterial infections.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Multivitamin Daily Supplement",
-    "description": "Multivitamin Daily Supplement provides a combination of essential vitamins and minerals to support overall health.",
+    "tags": ["vitamins", "minerals", "overall health"],
     "price": "400",
     "extraFeatures": "Promotes vitality and supports immune system.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Esomeprazole 40mg Capsule",
-    "description": "Esomeprazole 40mg Capsule is a stronger proton pump inhibitor used to treat conditions like gastroesophageal reflux disease (GERD).",
+    "tags": ["acid reflux", "GERD"],
     "price": "2100",
     "extraFeatures": "Relieves severe acid reflux symptoms.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "Diclofenac 50mg Tablet",
-    "description": "Diclofenac 50mg Tablet is a nonsteroidal anti-inflammatory drug (NSAID) used to reduce pain, inflammation, and swelling.",
+    "tags": ["pain relief", "anti-inflammatory", "joint pain"],
     "price": "1230",
     "extraFeatures": "Effective for joint pain and inflammation.",
-    "Added":false
+    "Added": false
   },
   {
     "name": "B complex Vitamin Supplement",
-    "description": "B complex Vitamin Supplement contains a group of essential B vitamins to support energy production and nervous system health.",
+    "tags": ["vitamins", "energy production", "nervous system"],
     "price": "403",
     "extraFeatures": "Helps maintain energy levels and brain function.",
-    "Added":false
+    "Added": false
   }
-]
-
+];

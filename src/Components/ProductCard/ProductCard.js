@@ -1,10 +1,13 @@
 import React,{useContext} from 'react';
-import { Card, CardContent, Typography,Button } from '@mui/material';
+import { Box,Card, CardContent, Typography,Button } from '@mui/material';
 import {ProductContext} from '../../ProductContext.js';
 import { Link,useParams } from 'react-router-dom';
+import CurrencyRupeeRoundedIcon from '@mui/icons-material/CurrencyRupeeRounded';
+import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
+import Tags from '../Tags.js';
 
 
-const ProductCard = ({ name, description, price, extraFeatures,Added }) => {
+const ProductCard = ({ name, tags, description, price, extraFeatures,Added }) => {
   const {cartTasks,setCartTasks,setWhPackage,setFeverPackage,feverPackage,whPackage} = useContext(ProductContext);
   const path = window.location.pathname;
 const cartText = path.split('/').pop();
@@ -44,11 +47,22 @@ const cartText = path.split('/').pop();
         <Typography variant="h5" component="div">
           {name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Price: {price}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mb: '8px' }}>
+        {tags.map((tag) => (
+    
+            <Tags tag={tag} />
+
+))}
+</Box>
+        <Typography variant="body2" color="text.secondary"
+         sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1px',
+          fontWeight: 'bold',
+        }} >
+           Price : <CurrencyRupeeRoundedIcon sx={{ fontSize: 'small' }} />
+            {price}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {extraFeatures}
@@ -57,7 +71,7 @@ const cartText = path.split('/').pop();
         { cartText !== "cart" ? 
         (Added ? 
           (
-            <Button variant="contained" component={Link} to="/cart">
+            <Button variant="outline" color="success" component={Link} to="/cart">
               Go to Cart
             </Button>
           ) :
