@@ -4,7 +4,7 @@ p {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body {
-  background: linear-gradient(to bottom right, #ff7f50, #ff4b2b, #ff0080);
+  /* background-color: #a6baab; */
   /* Replace the color codes and direction with your desired gradient */
   height: 100vh;
   margin: 0;

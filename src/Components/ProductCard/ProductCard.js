@@ -4,8 +4,8 @@ import {ProductContext} from '../../ProductContext.js';
 import { Link,useParams } from 'react-router-dom';
 import CurrencyRupeeRoundedIcon from '@mui/icons-material/CurrencyRupeeRounded';
 import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
-import Tags from '../Tags.js';
-import CartButton from '../Button.js';
+import Tags from '../Utilities/Tags.js';
+import CartButton from '../Utilities/Button.js';
 
 
 const ProductCard = ({ name, tags, description, price, extraFeatures,Added }) => {

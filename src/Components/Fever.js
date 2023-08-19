@@ -8,7 +8,7 @@ const FeverComponent = () => {
   const {feverPackage,setFeverPackage} = useContext(ProductContext);
 
   return (
-    <div>
+    <div style={{ marginTop: '20px' }}>
       <ProductCardList products={feverPackage}/>
     </div>
   );

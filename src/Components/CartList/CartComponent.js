@@ -19,7 +19,7 @@ const CartComponent = () => {
         <Typography variant="h6">Your cart is empty.</Typography>
       ) : (
         <>
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', marginTop: '20px' }}>
           <List className="cart-list" style={{ width: '70%', marginRight: 'auto' }}>
             {cartTasks.map((item, index) => (
               <>

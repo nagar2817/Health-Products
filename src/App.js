@@ -11,9 +11,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Home/>
-        {/* <HomeComponent />  */}
         <Routes>
+        <Route
+              path="/"
+              element={<Home/>}
+            />
             <Route
               path="/women-health-package"
               element={<WomenHealthComponent/>}
