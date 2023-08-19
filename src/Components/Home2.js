@@ -5,7 +5,8 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-import Hero from './ThreeDModel';
+import LandingPage from './Hero';
+
 
 
 function Home() {
@@ -14,7 +15,7 @@ function Home() {
       <Typography variant="h4" component="h1" align="center" gutterBottom>
         Welcome to our AI Healthcare Startup
       </Typography>
-    <Hero />
+    <LandingPage />
      
     </Container>
   );
