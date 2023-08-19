@@ -5,6 +5,7 @@ import { Link,useParams } from 'react-router-dom';
 import CurrencyRupeeRoundedIcon from '@mui/icons-material/CurrencyRupeeRounded';
 import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
 import Tags from '../Tags.js';
+import CartButton from '../Button.js';
 
 
 const ProductCard = ({ name, tags, description, price, extraFeatures,Added }) => {
@@ -68,10 +69,10 @@ const cartText = path.split('/').pop();
           {extraFeatures}
         </Typography>
 
-        { cartText !== "cart" ? 
+         {/* { cartText !== "cart" ? 
         (Added ? 
           (
-            <Button variant="outline" color="success" component={Link} to="/cart">
+            <Button variant="contained"  color="success" component={Link} to="/cart">
               Go to Cart
             </Button>
           ) :
@@ -81,7 +82,12 @@ const cartText = path.split('/').pop();
           </Button>
           )
           )
-        : "" }
+        : "" } */}
+        { Added ?
+         <CartButton Added={true} cartText="cart"/> :
+         <CartButton Added={false} handleAddToCart={handleAddToCart} cartText="add to cart" /> 
+        }
+       
       </CardContent>
     </Card>
   );

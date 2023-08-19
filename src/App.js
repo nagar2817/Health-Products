@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import HomeComponent from './Components/Home.js';
+import Home from './Components/Home2.js';
 import WomenHealthComponent from './Components/WomenHealth.js';
 import FeverComponent from './Components/Fever.js';
 import CartComponent from './Components/CartList/CartComponent.js';
@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <Home/>
         {/* <HomeComponent />  */}
         <Routes>
             <Route
